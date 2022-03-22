@@ -11,7 +11,7 @@
     SELECT * FROM `courses` WHERE `period` = 'I Semestre' AND `year` = 1;
 
 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21)
-    SELECT * FROM `exams` WHERE `date` = '2020/06/20' AND EXTRACT(HOUR FROM `hour`) >= 14;
+    SELECT * FROM `exams` WHERE `date` = '2020/06/20' AND HOUR(`hour`) >= 14;
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
     SELECT * FROM `degrees` WHERE `level`= 'magistrale';
@@ -20,4 +20,4 @@
     SELECT COUNT(*) AS Numero_Dipartimenti FROM `departments`;
 
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
-    SELECT * FROM `teachers` WHERE `phone` IS NULL;
+    SELECT Count(*) AS Numero_Insegnati_senza_numero_di_telefono FROM `teachers` WHERE `phone` IS NULL;
